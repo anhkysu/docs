@@ -1,0 +1,7 @@
+Create a file containing just this data:
+
+4yxrP2k6-wrFWYKCJ0K9SuG2MjdUYZTsWTEJWcA2Bmg.3LE60goA18J8QRNFzjDzLO38EyoS53pA_tbgJHoU-7A
+
+And make it available on your web server at this URL:
+
+http://www.itsc-rd.com/.well-known/acme-challenge/4yxrP2k6-wrFWYKCJ0K9SuG2MjdUYZTsWTEJWcA2Bmg
