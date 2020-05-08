@@ -42,3 +42,4 @@
 
 - [ ] SCRUM
 - [ ] AGILE
+- [ ] WATERFALL

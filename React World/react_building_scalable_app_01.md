@@ -111,6 +111,7 @@ Feature Based:
 |-- .eslintrc
 |-- .gitignore
 |-- ...
+
 Đọc thêm về 4 cách để thiết kế CSS Style cho React Component.
 
 Đọc bài về scale ở blog của huydx. Rút ra được kết luận: Để làm một hệ thống “scale”, bạn chỉ cần làm 4 bước: đoán mò -> kiểm thử -> cải thiện -> đoán mò tiếp, và tui vẫn chỉ đang lẩn quần trong vòng lặp này 😂. 2 công cụ benchmark (kiểm thử) hay dùng là Google Pagespeed và Lighthouse.
@@ -119,15 +120,3 @@ Tổng kết
 Sẽ ổn thôi nếu bạn vẫn xài những lib phổ biến (không phải latest) hoặc làm theo những best pracice và patterns có sẵn. Chúng ta không cần phải chọn những library thật sự mới mẻ, bởi vì: "business always comes first", và vì như vậy nên ta cần những thứ reliable và tốt cho team hơn, thứ sẽ giúp mọi thứ đi đúng hướng và nhanh hơn.
 
 Một vài yếu tố quan trọng nữa là dùng những lib có cộng đồng lớn và hỗ trợ lâu dài sẽ tốt cho quá trình develop hơn, bạn sẽ nhận được support của các developers khác trên khắp thế giới thông qua stackoverflow và github pages, issues cũng có thể được fix và merge rất nhanh từ các contributors.
-
-<details>
-<summary>Heading</summary>
-<ul>
-<li> markdown list 1</li>
-<ul>
-<li> nested list 1</li>
-<li> nested list 2</li>
-</ul>
-<li> markdown list 2</li>
-</ul>
-</details>
