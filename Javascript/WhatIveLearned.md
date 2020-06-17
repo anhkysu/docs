@@ -22,3 +22,13 @@ console.log(str);
 - `disruptive statements`: statement with break at the end
 
 > Expression page 15
+
+- `operator`: like +/-/%///===/!==/unary operators (delete/new/typeof/+/-/!) --> is how operation is made
+
+- `operand`: is what is operated on in an operation
+
+- `invocation operator`: eg: (), (asd,)
+
+- `refinement`: a refinement is used to specify a property or element of an object or array.
+
+18
