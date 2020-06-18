@@ -31,4 +31,6 @@ console.log(str);
 
 - `refinement`: a refinement is used to specify a property or element of an object or array.
 
-18
+- `function literal`: can have an optional name that it can use to call itself recursively.
+
+- `gurading nested objects`: flight.qeuipment -> undefined, flight.equipment.model -> Throw 'TypeError', flight.equipment && flight.equipment.model -> undefined
