@@ -41,3 +41,4 @@ UA-169925466-1
 
 
 /// You can use as many of them or as few of them as you want. The event goal will only trigger if the event matches EACH one that you’ve defined. So if you only define the category, the goal won’t care about actions, labels, or values. But if you define all four, the event must match all of them for the goal to activate.
+/// https://support.google.com/tagmanager/answer/6106716
