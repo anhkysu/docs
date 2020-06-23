@@ -107,4 +107,50 @@ return this;
 
 - `Function Scope`: Javascript does have function scope. Parameters and variables defined in a function are not visible outside of a function, and that a variable defined anywhere within a function is visible elsewhere within the function.
 
-- `Closure`: I can understand it but not now
+- `Closure`: Avoid creating functions within a loop. The inner function has access to the context (variables and parameters of the functions they are defined within at the time the inner function is executed) in which it was created.
+
+```
+// BETTER EXAMPLE
+// Make a function that assigns event handler functions to an array of nodes.
+// When you click on a node, an alert box will display the ordinal of the node.
+var add_the_handlers = function (nodes) {
+var helper = function (i) {
+return function (e) {
+alert(i);
+};
+};
+var i;
+for (i = 0; i < nodes.length; i += 1) {
+nodes[i].onclick = helper(i);
+}
+};
+```
+
+- `Callbacks`
+- `Module`: A module is a function or object that presents an interface but that hides its state and implementation. Using functions to produce modules can eliminate the use of global variables (mitigating of the Javascript's worst feature) and maintain security through closure.
+
+- `Cascade`: In cascade, we can call many methods on the same object in sequence in a single statement. But remember to return _this_ instead of returning nothing or undefined to use this cascade feature. Cascading can produce interfaces that are very expressive. It can help control the tendency to make interfaces that try to do too much at once.
+
+```
+getElement('myBoxDiv').
+move(350, 150).
+width(100).
+height(100).
+color('red').
+border('10px outset').
+padding('4px').
+appendText("Please stand by").
+```
+
+- `Curry`: Currying allows us to produce a new function by combining a function and an argument. Javascript does not have a curry method, but we can fix that by augmenting Function.prototype:
+
+```
+Function.method('curry', function ( ) {
+var args = arguments, that = this;
+return function ( ) {
+return that.apply(null, args.concat(arguments));
+};
+});
+```
+
+- `Memoization`: Functions can use objects to remember the results of previous operations, making it possible to avoid unnecessary work. This optimization is called memoization.

@@ -1,0 +1,2 @@
+- `Casting in Jvascript`: Javascript never casts
+- `Javascript is a prototypal language`: objects inherit directly from another class.
