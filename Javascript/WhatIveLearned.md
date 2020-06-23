@@ -107,4 +107,4 @@ return this;
 
 - `Function Scope`: Javascript does have function scope. Parameters and variables defined in a function are not visible outside of a function, and that a variable defined anywhere within a function is visible elsewhere within the function.
 
-36-52
+- `Closure`:
