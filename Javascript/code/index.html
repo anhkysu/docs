@@ -3,8 +3,9 @@
   <body>
     <h1 id="text">MY TESTING APPLICATION</h1>
     <script>
-      var abc = 'asdasd';
-      document.getElementById('text').innerHTML = 'ABCASDJAk';
+      var x = { abc: 'asdasd' };
+      var ok = x.hasOwnProperty('abc');
+      document.getElementById('text').innerHTML = ok.toString();
     </script>
   </body>
 </html>
