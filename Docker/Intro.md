@@ -1,0 +1,1 @@
+- Để cài được docker trên windows 10 cần --> https://www.youtube.com/watch?v=r6JiWwh-08c&list=PLwJr0JSP7i8At14UIC-JR4r73G4hQ1CXO&index=1 (3:22 - Gõ vào PowerShell Admin)
