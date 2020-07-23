@@ -51,3 +51,21 @@ docker exec -it <container id> <command>
 ```
 docker exec -it shell
 ```
+
+# Docker run with port mapping
+
+```
+docker run -p 8080 : 8080 <image id>
+
+// First port is from the localhost of the parent machine
+
+// Second port is the port inside the container
+```
+
+#Docker Volumes
+
+```
+sudo docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image id>
+```
+
+--> pwd is present working directory
