@@ -1,0 +1,10 @@
+clean cache with
+
+npm cache clean --force
+install the latest version of npm globally as admin:
+
+npm install -g npm@latest --force
+clean cache with
+
+npm cache clean --force
+Try to install your component once again.
