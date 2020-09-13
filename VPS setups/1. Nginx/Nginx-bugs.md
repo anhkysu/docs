@@ -18,3 +18,11 @@ Add the rule to the permanent set and reload FirewallD:
 sudo firewall-cmd --zone=public --add-service=http --permanent
 sudo firewall-cmd --reload
 ```
+
+# Can't use nginx as reverse proxy to direct traffic outside to containers
+
+Fuck you --> SELinux --> Security Enhanced Linux
+
+```
+setsebool -P httpd_can_network_connect 1
+```

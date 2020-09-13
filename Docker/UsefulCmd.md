@@ -69,3 +69,6 @@ sudo docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app <image id>
 ```
 
 --> pwd is present working directory
+
+#Find IP of Container
+docker exec -it (container id) hostname -i

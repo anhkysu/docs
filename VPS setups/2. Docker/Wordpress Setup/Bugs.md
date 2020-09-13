@@ -1,0 +1,1 @@
+Docker - No route to host --> set firewalld options --. quick test: service firewalld stop --> service docker restart --> test --> service firewalld start --> service docker restart
