@@ -1,1 +1,2 @@
 https://www.digitalocean.com/community/tutorials/copying-objects-in-javascript
+https://topdev.vn/blog/javascript-prototype-la-gi/
