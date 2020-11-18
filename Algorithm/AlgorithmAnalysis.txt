@@ -1,0 +1,1 @@
+﻿khi ta nói một thuật toán có độ phức tạp , ta muốn nói số lượng phép toán cơ bản mà thuật toán sử dụng không quá  với một hằng số  nào đó khi  đủ lớn, bất chấp ngôn ngữ lập trình sử dụng.
