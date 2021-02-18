@@ -63,19 +63,11 @@ class InputOutputDataBusiness
                 if($newTranslateObj instanceof \App\Models\Translate && $newTranslateObj->id){
                     $newInputData['translate_id'] = $newTranslateObj->id;
                 }
-
-                // send back notification data
-                //  notification data attributes: [sender, translate_id, receiverList, content]
-                // notification sent to TRANSLATORS & RELATED USERS
-                // Steps:
-                // Requirement 1: Get user_id of translator_suggested
-                // Requirement 2: Get translate_id of input data
-                // Requirement 3: Get project_id and then get the list of joint staff in a project using project_id
-                // Requirement 4: Get project_manager and team manager of a project, this->getLoadData(project_id)
-                // Requirement 5: Get staff_data_status
-                // Requirement 6: this function should also return an array of notification data, because we need different types of content and receivers
             }
             DB::commit();
+            $notificationBusiness = new \App\Business\NotificationBusiness($this->_actor, $this->_time);
+            $notifData = $notificationBusiness->getNotifInputData($newInputData, $inputDataObj, $newTranslateObj, \App\Constants\Notification::METHOD_CREATE);
+            $newInputData['notif_data'] = $notifData;
 
             return $newInputData;
         }catch(\App\Exceptions\ApiException $e){
@@ -283,6 +275,10 @@ class InputOutputDataBusiness
             $translateModel->updateInputDataTranslate($newInputData, $translateObj, $this->_actor, $this->_time);
             
             DB::commit();
+
+            $notificationBusiness = new \App\Business\NotificationBusiness($this->_actor, $this->_time);
+            $notifData = $notificationBusiness->getNotifInputData($newInputData, $inputDataObj, $translateObj, \App\Constants\Notification::METHOD_UPDATE);
+            $newInputData['notif_data'] = $notifData;
 
             return $newInputData;
         }catch(\App\Exceptions\ApiException $e){

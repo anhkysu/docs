@@ -48,6 +48,7 @@ class InputOutputDataApi extends ApiController
         try{
             $inputOutputDataBusiness = new \App\Business\InputOutputDataBusiness($this->actor, $this->timeRequest);
             $data = $request->all();
+            
             switch($data['name']){
                 case \App\Constants\DropdownLabel::IO_DATA_TYPE_INPUT: 
                     $this->error = $inputOutputDataBusiness->validateInputData($data);
@@ -56,11 +57,6 @@ class InputOutputDataApi extends ApiController
                         $this->dataResponse['data'] = $data;
                         $this->message = $inputOutputDataBusiness->messageInputDataSuccessful($data);
                     }
-                    // send notification
-                    $notificationData = new \stdClass;
-                    $notificationData->receiverList = 'an array';////;
-                    $notificationData->content = 'asdasd';
-
                     break;
                 case \App\Constants\DropdownLabel::IO_DATA_TYPE_OUTPUT:
                     $this->error = $inputOutputDataBusiness->validateOutputData($data);

@@ -50,7 +50,7 @@ class UserApplication extends Model
     public function selectUserById($user_id)
     {
         $user = DB::table($this->table)
-            ->select('id', 'short_name', 'staff_id','full_name', 'team')
+            ->select('id','uuid as user_uuid', 'id as ua_id', 'short_name', 'staff_id','full_name', 'team')
             ->where('id', '=', $user_id)
             ->get();
         $result = $user->toArray();
