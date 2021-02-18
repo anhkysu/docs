@@ -57,6 +57,10 @@ class InputOutputDataApi extends ApiController
                         $this->message = $inputOutputDataBusiness->messageInputDataSuccessful($data);
                     }
                     // send notification
+                    $notificationData = new \stdClass;
+                    $notificationData->receiverList = 'an array';////;
+                    $notificationData->content = 'asdasd';
+
                     break;
                 case \App\Constants\DropdownLabel::IO_DATA_TYPE_OUTPUT:
                     $this->error = $inputOutputDataBusiness->validateOutputData($data);
