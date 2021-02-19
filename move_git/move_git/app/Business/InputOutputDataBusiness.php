@@ -96,6 +96,9 @@ class InputOutputDataBusiness
                 }
             }
             DB::commit();
+            $notificationBusiness = new \App\Business\NotificationBusiness($this->_actor, $this->_time);
+            $notifData = $notificationBusiness->getNotifOutputData($newOutputData, $outputDataObj, $newTranslateObj, \App\Constants\Notification::METHOD_CREATE);
+            $newOutputData['notif_data'] = $notifData;
 
             return $newOutputData;
         }catch(\App\Exceptions\ApiException $e){
@@ -315,6 +318,9 @@ class InputOutputDataBusiness
             $translateModel->updateOutputDataTranslate($newOutputData, $translateObj, $this->_actor, $this->_time);
             
             DB::commit();
+            $notificationBusiness = new \App\Business\NotificationBusiness($this->_actor, $this->_time);
+            $notifData = $notificationBusiness->getNotifOutputData($newOutputData, $outputDataObj, $newTranslateObj, \App\Constants\Notification::METHOD_CREATE);
+            $newOutputData['notif_data'] = $notifData;
 
             return $newOutputData;
         }catch(\App\Exceptions\ApiException $e){

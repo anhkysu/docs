@@ -116,8 +116,26 @@ class NotificationBusiness
     public function getNotificationDataToManagers($newIOData, $ioDataObj, $translateObj, $method)
     {
         try {
-            
-            return 'some data';
+            $notifDataObj = new \stdClass();
+            $notifDataObj->source_table = "translate";
+            $notifDataObj->data_id = $newIOData['translate_id'];
+            $notifDataObj->sender = $this->_actor;
+            $notifDataObj->content = \App\Constants\Notification::CONTENT_QLDA_OUTPUT_DATA;
+            $notifDataObj->action = null;
+            if($method == \App\Constants\Notification::METHOD_CREATE){
+                $notifDataObj->action = \App\Constants\Notification::MSG_CREATE;
+            } else if($method == \App\Constants\Notification::METHOD_UPDATE){
+                $notifDataObj->action = \App\Constants\Notification::MSG_UPDATE;
+            }
+            $projectInfomation = \App\Models\ProjectInformation::find($newIOData['project_id']);
+            if(!($projectInfomation instanceof \App\Models\ProjectInformation)){
+                throw new \App\Exceptions\ApiException("[NotFound][Project] Id# $projectId", Response::HTTP_NOT_FOUND);
+            }
+            $teamManagerObj = $projectInfomation->getTeamManager();
+            if($teamManagerObj)
+            $projectManagerObj = $projectInfomation->getProjectManager();
+
+            return $notifDataObj;
         } catch (\App\Exceptions\ApiException $e) {
             
             throw $e;
