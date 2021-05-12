@@ -17,7 +17,7 @@
         "grunt-contrib-concat": "^1.0.1",
         "grunt-contrib-uglify": "^4.0.0",
         "laravel-mix": "^5.0.7",
-        "lodash": "^4.17.20",
+        "lodash": "^4.17.21",
         "resolve-url-loader": "^3.1.0",
         "sass": "^1.27.0",
         "sass-loader": "^8.0.0",
